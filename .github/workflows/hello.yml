@@ -1,7 +1,8 @@
-name: Workflow error
-on: push
-jobs:
-  run:
-    run-on: ubuntu-latest
-    steps:
-      - run: date
+name: Workflow error               # ワークフロー名
+on: push                           # ワークフロー起動トリガー
+jobs:                              # ジョブの定義
+  hello:                           # ジョブID
+    runs-on: ubuntu-latest         # ワークフロー実行環境（この場合は最新版Ubuntu）
+    steps:                         # ステップの定義
+      - run: echo "Hello World"    # シェルコマンドを実行
+      - uses: actions/checkout@v4  # アクションの呼び出し
